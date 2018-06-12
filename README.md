@@ -8,7 +8,8 @@ cocos creator中常用的工具方法汇总
 
 | 知识点 | 文档 |  
 | --- | --- |  
-| 坐标接口 | [position.md](/docs/position.md) |
+| 坐标接口 | [position.md](/docs/position.md) |  
+| camera | [camera.md](/docs/camera.md) |  
 
 ## 安装
 // TODO
