@@ -17,13 +17,35 @@ cocos creator 中的 camera 的处理还是比较方便的，但是由于官方�
 `camera` 的 `position` 表示该 `camera` 所拍摄的中心位置，修改该值即可实现镜头移动效果。
 
 ### Zoom Ratio 缩放比例
-`Zoom Ratio` 是指拍摄的缩放比例，显示效果为：`实际宽|高 / Zoom Ratio`
+`Zoom Ratio` 是指拍摄的缩放比例，具体为宽高的放大倍数，即 `Zoom Ratio` 越大，`Targets` 中的节点显示的大小越大，`camera` 显示的区域越小
 
 ## 实践说明补充
 按照上述说明，在实际操作中我们需要将地图、背景、角色等添加到 `camera` 的 `Targets` 中，而UI元素（血条、装备栏、技能栏之类）这类在屏幕上位置保持不变的元素则不需要添加到 `camera` 的 `Targets` 中  
 
 ## camera 关键方法
-// TODO addTarget removeTarget getTargets
+### addTarget
+接受一个节点作为参数，将节点添加到 `camera` 的 `Targets` 中
 
-## camera 对节点世界坐标的影响
-// TODO 一些复杂的地方需要具体实验，特别是 prefab 被创建后添加到 camera 中里时的位置表现需要额外注意
+```js
+camera.addTarget(nodeA);
+```
+
+### removeTarget
+### addTarget
+接受一个节点作为参数，将节点从 `camera` 的 `Targets` 中移除
+
+```js
+camera.addTarget(nodeA);
+```
+
+### getTargets
+获取所有摄像机目标节点
+
+```js
+const nodes = camera.getTargets();
+```
+
+## camera 对节点坐标的影响
+当使用 `addTarget` 将节点添加到 `camera` 中时，节点的节点坐标与世界坐标均不会变，但是渲染方式会按照 `camera` 的 `position` 与 `Zoom Ratio` 对应的规则进行显示。
+
+当使用 `prefab` 创建一个节点并添加到被 `camera` 所追踪的节点下时，TODO：表现情况有待实验
