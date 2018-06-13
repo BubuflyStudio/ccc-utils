@@ -6,9 +6,6 @@ cocos creator 中的 camera 的处理还是比较方便的，但是由于官方�
 
 通过调节 `camera` 的这三个属性，即可控制 `camera` 的拍摄行为，这里介绍这三个属性在 `camera` 使用中的具体影响。
 
-### position
-`camera` 的位置，以此位置为拍摄中心，
-
 ### Targets 追踪对象
 1. 当一个节点添加到 `camera` 的 `Targets` 列表中时，其本身与其子节点都将被该 `camera` 追踪  
 1. 只有被追踪的对象，才会对 `camera` 的 `position` 变动做出反应。比如将 `camera` 的 `position` 向下移动时，只有位于 `Targets` 中的节点才会向上移动（显示效果上向上移动，实际 `position` 不受 `camera` 影响），而不在 `Targets` 中的节点则会保持在窗口中显示位置不变不受 `camera` 移动的影响。
